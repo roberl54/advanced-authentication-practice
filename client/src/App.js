@@ -43,7 +43,29 @@ class App extends Component {
   }
 
   handleSignIn(credentials) {
-    // Handle Sign Up
+    const { username, password } = credentials;
+    if (!username.trim() || !password.trim() ) {
+      this.setState({
+        // signUpSignInError: "Must Provide All Fields"
+        signUpSignInError: "Username or Password invalid"
+      });
+    } else {
+
+      fetch("/api/signin", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(credentials)
+      }).then((res) => {
+        return res.json();
+      }).then((data) => {
+        const { token } = data;
+        localStorage.setItem("token", token);
+        this.setState({
+          signUpSignInError: "",
+          authenticated: token
+        });
+      });
+    }
   }
 
   handleSignOut() {
@@ -55,9 +77,10 @@ class App extends Component {
 
   renderSignUpSignIn() {
     return (
-      <SignUpSignIn 
-        error={this.state.signUpSignInError} 
-        onSignUp={this.handleSignUp} 
+      <SignUpSignIn
+        error={this.state.signUpSignInError}
+        onSignUp={this.handleSignUp}
+        onSignIn={this.handleSignIn}
       />
     );
   }
@@ -81,12 +104,12 @@ class App extends Component {
     } else {
       whatToShow = this.renderSignUpSignIn();
     }
-       
+
     return (
       <BrowserRouter>
         <div className="App">
-          <TopNavbar 
-            showNavItems={this.state.authenticated} 
+          <TopNavbar
+            showNavItems={this.state.authenticated}
             onSignOut={this.handleSignOut} />
           {whatToShow}
         </div>

@@ -3,7 +3,7 @@ import bcrypt from "bcrypt-nodejs";
 import jwt from "jwt-simple";
 
 export function signIn(req, res) {
-  
+
   console.log("logged in now");
   res.json({ token: tokenForUser(req.user)});
 }
@@ -16,9 +16,9 @@ export function signUp(req, res, next) {
       .json({ error: "You must provide an username and password" });
   }
   console.log("Look for a user with the username");
-  User.findOne({ username:u}).exec()
+  User.findOne({ username: u}).exec()
   .then((existingUser) => {
-    // If the user exist return an error on sign up
+    // If the user exists return an error on sign up
     if (existingUser) {
       console.log("This username is already being used");
       return res.status(422).json({ error: "Username is in use" });
@@ -51,4 +51,3 @@ function tokenForUser(user) {
   const timestamp = new Date().getTime();
   return jwt.encode({ userId: user.id, iat: timestamp }, process.env.SECRET);
 }
-

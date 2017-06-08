@@ -10,7 +10,7 @@
 ### Sign In
 * Create a component called SignIn
 * Use SignUp as an example
-* Make sure the button says Sign In 
+* Make sure the button says Sign In
 * It doesn’t need the confirm text box
 * It needs a prop called onSignIn that is a function
 * In handleSubmit, call onSignIn
@@ -19,7 +19,7 @@
 * Use the SignIn component in the SignUpSignIn component
 
 ### Implement handleSignIn in App.js
-* Need to do a fetch post to /signin 
+* Need to do a fetch post to /signin
 * Code will probably almost the same as handleSignUp
 * In the first fetch `then` there is a parameter for the `response`
 * this object has a property called status
@@ -27,15 +27,15 @@
 * Else just return JSON as normal
 
 ### Secured Components
-* Create 3 class components it doesn’t matter what they are 
+* Create 3 class components it doesn’t matter what they are
 * componentDidMount should use fetch to make a GET request to a secured path that you create
-* In App.js renderApp, add routes for them these components
+* In App.js renderApp, add routes for these components
 
 ### App
 * Fix App.js handleSignUp
     * It is common practice to make sure you know what password you are typing in by having the user type it in twice and ensure they typed the same thing each time
     * It is not checking whether password and confirm password are the same. Implement this logic and show an error message.
-    * The promise callback function is not handling the error of if you sign up with a  username that already exists
+    * The promise callback function is not handling the error of if you sign up with a username that already exists
     * Check whether an error message was returned from the server and show it.
 
 ### TopNavbar.js

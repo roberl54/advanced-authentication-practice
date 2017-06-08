@@ -33,5 +33,3 @@ export default new LocalStrategy(function (username, password, done) {
   })
   .catch(err => done(err, false));
 });
-
-
