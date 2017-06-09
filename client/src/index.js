@@ -12,9 +12,7 @@ window.fetch = function fetch(url, settings) {
   return oldFetch(url, settings);
 };
 
-
 ReactDOM.render(
   <App />,
   document.getElementById("root")
 );
-

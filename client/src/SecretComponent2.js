@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class SecretComponent1 extends Component {
+class SecretComponent2 extends Component {
   constructor() {
     super();
   }
@@ -8,10 +8,10 @@ class SecretComponent1 extends Component {
   render() {
     return (
       <div>
-        <h5>You did it! </h5>
+        <h5>Everything is coming up Millhouse!</h5>
       </div>
     );
   }
 }
 
-export default SecretComponent1;
+export default SecretComponent2;
