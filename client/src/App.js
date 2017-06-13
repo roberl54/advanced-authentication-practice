@@ -26,6 +26,15 @@ class App extends Component {
       this.setState({
         signUpSignInError: "Must Provide All Fields"
       });
+    } if (password !== confirmPassword) {
+      this.setState({
+        signUpSignInError: "Passwords do not match, try again."
+      });
+    } if (username === username) {
+      // FIX THIS LATER!!!!
+      this.setState({
+        signUpSignInError: "Username already exists, try again."
+      });
     } else {
 
       fetch("/api/signup", {

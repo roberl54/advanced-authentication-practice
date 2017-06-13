@@ -8,22 +8,26 @@ const TopNavbar = (props) => {
   if (props.showNavItems) {
     secretNavItems =
       <Nav pullRight>
-        <Link to="/secret"><Navbar.Text>Secret</Navbar.Text></Link>
-        <NavDropdown eventKey="4" title="Secret Things" id="nav-dropdown">
-          <MenuItem eventKey="4.1">
-            <Link to="/secret/secretcomponent1" eventKey="4.1">
+        <Link to="/secret">
+          <Navbar.Text>
+            Secret
+          </Navbar.Text>
+        </Link>
+        <NavDropdown title="Secret Things" id="nav-dropdown">
+          <MenuItem>
+            <Link to="/secret/secretcomponent1">
               Secret Component 1
             </Link>
           </MenuItem>
           <MenuItem divider />
-          <MenuItem eventKey="4.2">
-            <Link to="/secret/secretcomponent2" eventKey="4.2">
+          <MenuItem>
+            <Link to="/secret/secretcomponent2">
               Secret Component 2
             </Link>
           </MenuItem>
           <MenuItem divider />
-          <MenuItem eventKey="4.2">
-            <Link to="/secret/secretcomponent3" eventKey="4.3">
+          <MenuItem>
+            <Link to="/secret/secretcomponent3">
               Secret Component 3
             </Link>
           </MenuItem>
@@ -44,9 +48,6 @@ const TopNavbar = (props) => {
       </Navbar.Collapse>
     </Navbar>
   );
-
-
-
 };
 
 TopNavbar.propTypes = {

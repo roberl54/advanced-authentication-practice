@@ -28,15 +28,15 @@
 
 ### Secured Components
 * Create 3 class components it doesn’t matter what they are
-* componentDidMount should use fetch to make a GET request to a secured path that you create
+// * componentDidMount should use fetch to make a GET request to a secured path that you create
 * In App.js renderApp, add routes for these components
 
 ### App
 * Fix App.js handleSignUp
     * It is common practice to make sure you know what password you are typing in by having the user type it in twice and ensure they typed the same thing each time
     * It is not checking whether password and confirm password are the same. Implement this logic and show an error message.
-    * The promise callback function is not handling the error of if you sign up with a username that already exists
-    * Check whether an error message was returned from the server and show it.
+    // * The promise callback function is not handling the error of if you sign up with a username that already exists
+    // * Check whether an error message was returned from the server and show it.
 
 ### TopNavbar.js
 * Add 3 more Links for the secured components routes
@@ -44,10 +44,10 @@
     * Use this property to determine whether to show the Nav Items, only show the secured routes if showNavItems === true
     * The sign out should always be shown
 
-# Server
+// # Server
 * Create 3 secure routes on the server
 * It doesn’t matter what they return
-* If the request is not authenticated then the route should not be executed at it should return unauthorized.
+* If the request is not authenticated then the route should not be executed and it should return unauthorized.
 * Make a fetch get request to these routes in the secure components
 
 # Extra Credit
