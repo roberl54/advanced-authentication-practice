@@ -30,12 +30,14 @@ class App extends Component {
       this.setState({
         signUpSignInError: "Passwords do not match, try again."
       });
-    } if (username === username) {
-      // FIX THIS LATER!!!!
-      this.setState({
-        signUpSignInError: "Username already exists, try again."
-      });
-    } else {
+    }
+    // if (username === username) {
+    //   // FIX THIS LATER!!!!
+    //   this.setState({
+    //     signUpSignInError: "Username already exists, try again."
+    //   });
+    // }
+    else {
 
       fetch("/api/signup", {
         method: "POST",
@@ -103,6 +105,9 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <h1>I am protected!</h1>} />
           <Route exact path="/secret" component={Secret} />
+          <Route exact path="/super-duper-secret" component={Secret} />
+          <Route exact path="/super-super-duper-secret" component={Secret} />
+          <Route exact path="/extra-super-super-duper-secret" component={Secret} />
           <Route exact path="/secret/secretcomponent1" component={SecretComponent1} />
           <Route exact path="/secret/secretcomponent2" component={SecretComponent2} />
           <Route exact path="/secret/secretcomponent3" component={SecretComponent3} />

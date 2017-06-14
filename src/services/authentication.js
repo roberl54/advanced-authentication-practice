@@ -4,7 +4,7 @@ import {
   ExtractJwt
 } from "passport-jwt";
 
-// Setup options for JwtStrategy
+// Setup options for JwtStrategy - thing that does encryption; creates user's token
 const jwtOptions = {
   // Get the secret from our environment
   secretOrKey: process.env.SECRET,
@@ -26,5 +26,3 @@ export default new JwtStrategy(jwtOptions, function (payload, done) {
     }
   });
 });
-
-

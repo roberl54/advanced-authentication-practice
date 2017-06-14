@@ -28,7 +28,7 @@
 
 ### Secured Components
 * Create 3 class components it doesn’t matter what they are
-// * componentDidMount should use fetch to make a GET request to a secured path that you create
+* componentDidMount should use fetch to make a GET request to a secured path that you create
 * In App.js renderApp, add routes for these components
 
 ### App
@@ -44,7 +44,7 @@
     * Use this property to determine whether to show the Nav Items, only show the secured routes if showNavItems === true
     * The sign out should always be shown
 
-// # Server
+# Server
 * Create 3 secure routes on the server
 * It doesn’t matter what they return
 * If the request is not authenticated then the route should not be executed and it should return unauthorized.
